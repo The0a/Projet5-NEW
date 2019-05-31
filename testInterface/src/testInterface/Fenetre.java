@@ -1,5 +1,7 @@
 package testInterface;
 
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.FileNotFoundException;
@@ -9,10 +11,6 @@ import javax.swing.JFrame;
 public class Fenetre extends JFrame  {
 	
 	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	Panneau pan = new Panneau();
 	
 	
