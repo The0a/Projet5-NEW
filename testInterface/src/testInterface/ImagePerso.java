@@ -6,12 +6,15 @@ public class ImagePerso {
 	private Image image; 
 	private int x=0;
 	private int y=0;
-	
+
 	public ImagePerso(Image image, int x, int y) {
+	
 		this.image = image;
 		this.x = x;
 		this.y = y;
 	}
+
+
 
 	public Image getImage() {
 		return image;
