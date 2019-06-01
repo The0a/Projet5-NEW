@@ -1,74 +1,72 @@
-//package testInterface;
-//
-//
-//import java.awt.Image;
-//import java.io.File;
-//import java.io.FileNotFoundException;
-//import java.util.Scanner;
-//
-//public class DAOFichier {
-//	private String FileName = "src/Image/text.txt";
-//	private String message = "";
-//	char[][] line = new char[4][4];
-//	ImagePerso[][] tabImg = new ImagePerso[4][4];
-//
-//	public String getFileName() {
-//		return FileName;
-//	}
-//
-//	public void setFileName(String fileName) {
-//		FileName = fileName;
-//	}
-//
-//	public String getMessage() {
-//		return message;
-//	}
-//
-//	public void setMessage(String message) {
-//		this.message = message;
-//	}
-//
-//	public DAOFichier(Panneau decors) throws FileNotFoundException {
-//		super();
-//		readFile(decors);
-//	}
-//
-//	public void readFile(Panneau decors) throws FileNotFoundException {
-//		File text = new File(FileName);
-//		int x = 0;
-//		for (int i = 0; i < 4; i++) {
-//			for (int j = 0; j < 4; j++) {
-//				Scanner scnr = new Scanner(text);
-//				line[i][j] = scnr.nextLine().charAt(x);
-//				scnr.close();
-//
-//				switch (line[i][j]) {
-//
-//				case 'a': {
-//					tabImg[i][j] = decors.getWall();
-//					decors.setxDecors(decors.getxDecors());
-//					decors.setyDecors(decors.getyDecors());
-//					decors.repaint();
-//					break;
-//				}
-//				case 'b': {
-//					decors.setxDecors(decors.getxDecors());
-//					decors.setyDecors(decors.getyDecors());
-//					tabImg[i][j] = decors.getRock();
-//					decors.repaint();
-//
-//					break;
-//				}
-//
-//				}
-//
-//				decors.setxDecors(decors.getxDecors()+50);
-//				message = message + line[i][j];
-//				x += 1;
-//			}
-//			decors.setyDecors(decors.getyDecors()+50);
-//			message = message + "\n";
-//
-//		}
-//	}
-//}
+package testInterface;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
+
+class DBProperties extends Properties {
+
+	
+	private static final long		serialVersionUID			= 5289057445894568927L;
+
+	
+	private final static String	PROPERTIES_FILE_NAME	= "model.properties";
+
+	
+	private String	url	= "";
+
+	
+	private String	login = "";
+
+	
+	private String	password = "";
+
+	
+	public DBProperties() {
+		InputStream inputStream;
+
+		inputStream = this.getClass().getClassLoader().getResourceAsStream(DBProperties.PROPERTIES_FILE_NAME);
+
+		if (inputStream != null) {
+			try {
+				this.load(inputStream);
+			} catch (final IOException e) {
+				e.printStackTrace();
+			}
+			this.setUrl(this.getProperty("url"));
+			this.setLogin(this.getProperty("login"));
+			this.setPassword(this.getProperty("password"));
+		}
+	}
+
+	
+	public String getUrl() {
+		return this.url;
+	}
+
+	
+	private void setUrl(final String url) {
+		this.url = url;
+	}
+
+	
+	public String getLogin() {
+		return this.login;
+	}
+
+	
+	private void setLogin(final String login) {
+		this.login = login;
+	}
+
+	
+	public String getPassword() {
+		return this.password;
+	}
+
+	private void setPassword(final String password) {
+		this.password = password;
+	}
+
+}

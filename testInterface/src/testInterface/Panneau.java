@@ -18,9 +18,7 @@ import javax.swing.JPanel;
 
 class Panneau extends JPanel implements KeyListener {
 
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	private int largeur = 25;
 	private int longueur = 25;
