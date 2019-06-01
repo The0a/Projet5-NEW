@@ -1,23 +1,18 @@
 package testInterface;
 
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
-import testInterface.DBCo;
-import javax.imageio.ImageIO;
-import javax.swing.DefaultBoundedRangeModel;
-import javax.swing.JPanel;
 
-import sun.launcher.resources.launcher;
+import javax.imageio.ImageIO;
+import javax.swing.JPanel;
 
 class Panneau extends JPanel implements KeyListener {
 
