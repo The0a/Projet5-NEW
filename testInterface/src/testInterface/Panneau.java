@@ -12,9 +12,12 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
-
+import testInterface.DBCo;
 import javax.imageio.ImageIO;
+import javax.swing.DefaultBoundedRangeModel;
 import javax.swing.JPanel;
+
+import sun.launcher.resources.launcher;
 
 class Panneau extends JPanel implements KeyListener {
 
@@ -55,7 +58,7 @@ class Panneau extends JPanel implements KeyListener {
 		}
 //		setPreferredSize(new Dimension(100, 100));
 		setForeground(Color.GREEN);
-		this.map = readFile();
+		this.map = readMap();
 		displayMap(this.map);
 
 	}
@@ -153,9 +156,10 @@ class Panneau extends JPanel implements KeyListener {
 		}
 	}
 
-	public char[][] readFile() throws FileNotFoundException {
-		String FileName = "src/Image/text.txt";
-		Scanner scnr = new Scanner(new FileReader(FileName));
+	public char[][] readMap() /*throws FileNotFoundException*/ {
+
+		String MapFinal = "Launcher.map1";
+		Scanner scnr = new Scanner(MapFinal);
 
 		String str = "";
 		char[] charArray;
@@ -171,7 +175,7 @@ class Panneau extends JPanel implements KeyListener {
 
 		scnr.close();
 
-		return map1;
+		return map;
 
 	}
 

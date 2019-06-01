@@ -1,19 +1,13 @@
 package testInterface;
 
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.SQLException;;
+import java.sql.SQLException;
 
-public class Launcher {
+public class DBCo {
 
-	public static void main(String[] args) throws IOException {
-		new Fenetre();
-		DBRequest();
-	}
-
-	public static void DBRequest() {
+	public void DBRequest() {
 
 		// Access to Data Base
 		String url = "jdbc:mysql://localhost:3306/jpublankproject?useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
@@ -42,8 +36,8 @@ public class Launcher {
 			// 5 : Data recovery
 
 			while (resultSet.next()) {
-				String map = resultSet.getString("Map");
-				System.out.println(map);
+				String mapFinal = resultSet.getString("Map");
+				System.out.println(mapFinal);
 
 			}
 		} catch (SQLException e) {
