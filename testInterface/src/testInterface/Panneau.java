@@ -19,7 +19,7 @@ import javax.swing.JPanel;
 class Panneau extends JPanel implements KeyListener {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 	private int largeur = 25;
@@ -51,7 +51,7 @@ class Panneau extends JPanel implements KeyListener {
 			ennemies = ImageIO.read(new File("src/Image/Ennemies.png"));
 			dirt = ImageIO.read(new File("src/Image/groundfinal.png"));
 			Rockford = RockFordRight;
-			
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -181,7 +181,7 @@ class Panneau extends JPanel implements KeyListener {
 		int[] coord = this.pixelToIndex(this.xRockford, this.yRockford);
 		if (this.map[coord[0]][coord[1]]=='b')
 			{
-			this.map[coord[0]][coord[1]] = 't';	
+			this.map[coord[0]][coord[1]] = 't';
 			}
 		if (this.map[coord[0]][coord[1]] == 'd') {
 			countDiamond++;
