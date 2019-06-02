@@ -44,7 +44,7 @@ public class Launcher {
 			while (resultSet.next()) {
 				String map = resultSet.getString("Map");
 				System.out.println(map);
-
+				
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
